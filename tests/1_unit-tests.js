@@ -27,7 +27,7 @@ suite('Unit Tests', function(){
   test('Error on a double-fraction', function(done) {
     let input = '3/7.2/4kg';
     let expected = 'invalid number';
-    
+    assert.equal(convertHandler.getNum(input), 'invalid number')
   })
   
   test('Default to a numerical input of 1 when no numerical input is provided', function(done) {

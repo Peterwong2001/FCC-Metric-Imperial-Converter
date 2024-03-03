@@ -22,9 +22,19 @@ module.exports = function (app) {
     resObj['returnUnit'] = returnUnit
     resObj['string'] = toString
     
+    if (initNum === 'invalid number' && initUnit === 'invalid unit') {
+      res.json('invalid number and unit')
+    }
+    
     if (initUnit === 'invalid unit') {
       res.json(initUnit)
     }
+    
+    if (initNum === 'invalid number') {
+      res.json(initNum)
+    }
+    
+
     
     res.json(resObj)
   })

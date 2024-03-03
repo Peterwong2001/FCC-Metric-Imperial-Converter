@@ -22,11 +22,23 @@ suite('Functional Tests', function() {
   });
   
   test('Convert an invalid number such as 3/7.2/4kg', function(done) {
-   
+    chai.request(server)
+        .get('/api/convert')
+        .query({input: '3/7.2/4kg'})
+        .end(function(err, res) {
+          assert.equal(res.body = 'invalid number')
+    })
+    done();
   })
   
   test('Convert an invalid number AND unit such as 3/7.2/4kilomegagram', function(done) {
-    
+    chai.request(server)
+        .get('/api/convert')
+        .query({input: '3/7.2/4kilomegagram'})
+        .end(function(err, res) {
+          assert.equal(res.body = 'invalid number and unit')
+    })
+    done();
   })
   
   test('Convert with no number such as kg', function(done) {
