@@ -134,7 +134,8 @@ function ConvertHandler() {
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     let result;
     
-    result = initNum + ' ' + this.spellOutUnit(initUnit) + ' converts to ' + returnNum+ ' ' + this.spellOutUnit(returnUnit)
+    result = initNum + ' ' + this.spellOutUnit(initUnit) + ' converts to ' +  returnNum+ ' ' + this.spellOutUnit(returnUnit)
+    
     
     return result;
   };
