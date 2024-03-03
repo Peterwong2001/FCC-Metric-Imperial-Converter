@@ -59,6 +59,7 @@ suite('Unit Tests', function(){
     let input = [5, 'L'];
     let expected = 1.32086;
     assert.approximately(convertHandler.convert(input[0], input[1]), expected, 0.1);
+    done();
   })
   
   test('Correctly convert mi to km', function(done) {
@@ -70,11 +71,15 @@ suite('Unit Tests', function(){
   })
   
   test('Correctly convert lbs to kg', function(done) {
-    
+    let input = [5, 'lbs'];
+    let expected = 2.26796;
+    assert.approximately(convertHandler.convert(input[0], input[1]), expected, 0.1);
+    done();
   })
   
   test('Correctly convert kg to lbs', function(done) {
-    
+    let input = [5, 'kg'];
+    let expected = 
   })
   
   ////////////////

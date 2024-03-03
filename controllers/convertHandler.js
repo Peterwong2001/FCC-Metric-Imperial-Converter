@@ -51,7 +51,7 @@ function ConvertHandler() {
     if (initUnit === 'lbs' || initUnit === 'LBS') {
       result = (initNum * lbsToKg).toFixed(5)
     } else if (initUnit === 'kg' || initUnit === 'KG') {
-      result = (init)
+      result = (initNum / lbsToKg).toFixed(5)
     }
     
     return result;
