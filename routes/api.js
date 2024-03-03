@@ -6,6 +6,7 @@ const ConvertHandler = require('../controllers/convertHandler.js');
 module.exports = function (app) {
   
   let convertHandler = new ConvertHandler();
+  
   app.route('/api/convert')
   .get(function(req, res) {
     let input = req.query.input;
@@ -14,13 +15,6 @@ module.exports = function (app) {
     let returnNum = convertHandler.convert(initNum, initUnit);
     let returnUnit = convertHandler.getReturnUnit(initUnit);
     let toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
-    
-    let resObj = {};
-    resObj['initNum'] = initNum
-    resObj['initUnit'] = initUnit
-    resObj['returnNum'] = returnNum
-    resObj['returnUnit'] = returnUnit
-    resObj['string'] = toString
     
     if (initNum === 'invalid number' && initUnit === 'invalid unit') {
       res.json('invalid number and unit')
@@ -34,7 +28,12 @@ module.exports = function (app) {
       res.json(initNum)
     }
     
-
+    let resObj = {};
+    resObj['initNum'] = initNum
+    resObj['initUnit'] = initUnit
+    resObj['returnNum'] = returnNum
+    resObj['returnUnit'] = returnUnit
+    resObj['string'] = toString
     
     res.json(resObj)
   })
