@@ -49,11 +49,16 @@ suite('Unit Tests', function(){
   })
   
   test('Correctly convert gal to L', function(done) {
-    
+    let input = [5, 'gal'];
+    let expected = 18.9271;
+    assert.approximately(convertHandler.convert(input[0], input[1]), expected, 0.1);
+    done();
   })
   
   test('Correctly convert L to gal', function(done) {
-    
+    let input = [5, 'L'];
+    let expected = 1.32086;
+    assert.approximately(convertHandler.convert(input[0], input[1]), expected, 0.1);
   })
   
   test('Correctly convert mi to km', function(done) {
