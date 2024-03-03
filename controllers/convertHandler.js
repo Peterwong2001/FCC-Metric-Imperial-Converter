@@ -21,10 +21,16 @@ function ConvertHandler() {
   this.getReturnUnit = function(initUnit) {
     let result;
     
-    if (initUnit === 'gal') {
+    if (initUnit === 'gal' || initUnit === 'GAL') {
       result = 'l'
     } else if (initUnit === 'l' || initUnit === 'L') {
       result = 'gal'
+    }
+    
+    if (initUnit === 'lbs' || initUnit === 'LBS') {
+      result = 'kg'
+    } else if (initUnit === 'kg' || initUnit === 'KG') {
+      result = 'lbs'
     }
     
     return result;
@@ -49,7 +55,7 @@ function ConvertHandler() {
     }
     
     if (initUnit === 'lbs' || initUnit === 'LBS') {
-      result = (initNum * lbsToKg).toFixed(5)
+      result = initNum * lbsToKg
     } else if (initUnit === 'kg' || initUnit === 'KG') {
       result = (initNum / lbsToKg).toFixed(5)
     }
