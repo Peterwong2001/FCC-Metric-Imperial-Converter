@@ -48,9 +48,37 @@ suite('Unit Tests', function(){
     
   })
   
-  test('For each valid unit inputs', function(done) {
-    var input = ['gal', 'GAL', 'l', 'L', 'mi', 'MI', 'km', 'KM', 'lbs', 'LBS', 'kg', 'KG']
+  test('Correctly convert gal to L', function(done) {
     
+  })
+  
+  test('Correctly convert L to gal', function(done) {
+    
+  })
+  
+  test('Correctly convert mi to km', function(done) {
+    
+  })
+  
+  test('Correctly convert km to mi', function(done) {
+    
+  })
+  
+  test('Correctly convert lbs to kg', function(done) {
+    
+  })
+  
+  test('Correctly convert kg to lbs', function(done) {
+    
+  })
+  
+  ////////////////
+  test('For each valid unit inputs', function(done) {
+    let input = ['gal', 'GAL', 'l', 'L', 'mi', 'MI', 'km', 'KM', 'lbs', 'LBS', 'kg', 'KG']
+    input.forEach(function(ele) {
+      assert.equal(convertHandler.getUnit(32 + ele), ele)
+    });
+    done();
   })
   
   
