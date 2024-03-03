@@ -64,8 +64,8 @@ suite('Unit Tests', function(){
   })
     
   test('Return the correct return unit for each valid input unit', function(done) {
-    let input = ['gal', 'l', 'mi', 'km', 'lbs', 'kg'];
-    let expect = ['l', 'gal', 'km', 'mi', 'kg', 'lbs'];
+    let input = ['gal', 'L', 'mi', 'km', 'lbs', 'kg'];
+    let expect = ['L', 'gal', 'km', 'mi', 'kg', 'lbs'];
     input.forEach(function(ele, i) {
       assert.equal(convertHandler.getReturnUnit(ele), expect[i]);
     })

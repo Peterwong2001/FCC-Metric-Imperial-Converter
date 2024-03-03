@@ -20,12 +20,12 @@ module.exports = function (app) {
       res.json('invalid number and unit')
     }
     
-    if (initUnit === 'invalid unit') {
-      res.json(initUnit)
-    }
-    
     if (initNum === 'invalid number') {
       res.json(initNum)
+    }
+    
+    if (initUnit === 'invalid unit') {
+      res.json(initUnit)
     }
     
     let resObj = {};

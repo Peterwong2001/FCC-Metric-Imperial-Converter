@@ -123,7 +123,7 @@ function ConvertHandler() {
     }
     
     if (initUnit === 'mi' || initUnit === 'MI') {
-      result = initNum * miToKm
+      result = (initNum * miToKm).toFixed(5)
     } else if (initUnit === 'km' || initUnit === 'KM') {
       result = (initNum / miToKm).toFixed(5)
     }
