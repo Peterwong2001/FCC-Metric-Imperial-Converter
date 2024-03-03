@@ -15,10 +15,22 @@ function ConvertHandler() {
   this.getReturnUnit = function(initUnit) {
     let result;
     
-    if (initUnit === 'gal' || initUnit === 'GAL') {
+    if (initUnit === 'gal') {
       result = 'l'
-    } else if (initUnit === 'l' || initUnit === 'L') {
+    } else if (initUnit === 'l') {
       result = 'gal'
+    }
+    
+    if (initUnit === 'lbs') {
+      result = 'kg'
+    } else if (initUnit === 'kg') {
+      result = 'lbs'
+    }
+    
+    if (initUnit === 'mi') {
+      result = 'km'
+    } else if (initUnit === 'km') {
+      result = 'mi'
     }
     
     return result;
@@ -36,10 +48,22 @@ function ConvertHandler() {
     const miToKm = 1.60934;
     let result;
     
-    if (initUnit === 'gal' || initUnit === 'GAL') {
+    if (initUnit === 'gal') {
       result = (initNum * galToL).toFixed(5)
-    } else if(initUnit === 'l' || initUnit === 'L') {
+    } else if (initUnit === 'l') {
       result = (initNum / galToL).toFixed(5)
+    }
+    
+    if (initUnit === 'lbs') {
+      result = (initNum * lbsToKg).toFixed(5)
+    } else if (initUnit === 'kg') {
+      result = (initNum / lbsToKg).toFixed(5)
+    }
+    
+    if (initUnit === 'mi') {
+      result = (initNum * miToKm).toFixed(5)
+    } else if (initUnit === 'km') {
+      result = (initNum / miToKm).toFixed(5)
     }
     
     return result;
