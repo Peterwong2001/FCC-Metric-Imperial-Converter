@@ -37,11 +37,19 @@ suite('Unit Tests', function(){
   })
   
   test('Default to a numerical input of 1 when no numerical input is provided', function(done) {
-    
+    let input = 'kg';
+    let expected = 1;
+    assert.equal(convertHandler.getNum(input), 1)
+    done();
   })
   
   test('Valid input unit', function(done) {
-    
+    let input = ['gal', 'l', 'mi', 'km', 'lbs', 'kg'];
+    let expect = ['gallon(s)', 'litre(s)', 'mile(s)', 'kilometre(s)', 'pound(s)', 'kilogram(s)'];
+    input.forEach(function(ele, i) {
+      assert.equal(convertHandler.spellOutUnit(ele), expect[i]);
+    })
+    done();
   })
   
   test('Return an error for an invalid input unit', function(done) {

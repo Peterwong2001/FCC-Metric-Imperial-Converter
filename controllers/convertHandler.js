@@ -35,6 +35,10 @@ function ConvertHandler() {
     
     result = input.match(inputRegex)[1]
     
+    if (!result) {
+      result = input.match(inputRegex)[0]
+    }
+    
     let validUnits = ['gal', 'GAL', 'l', 'L', 'mi', 'MI', 'km', 'KM', 'lbs', 'LBS', 'kg', 'KG']
     if (!validUnits.includes(result)) {
       return 'invalid unit'
@@ -70,6 +74,33 @@ function ConvertHandler() {
   this.spellOutUnit = function(unit) {
     let result;
     
+    switch (unit) {
+      case 'gal':
+      case 'GAL':
+        result = 'gallon(s)';
+        break;
+      case 'l':
+      case 'L':
+        result = 'litre(s)';
+        break;
+      case 'lbs':
+      case 'LBS':
+        result = 'pound(s)';
+        break;
+      case 'kg':
+      case 'KG':
+        result = 'kilogram(s)';
+        break;
+      case 'mi':
+      case 'MI':
+        result = 'mile(s)';
+        break;
+      case 'km':
+      case 'KM':
+        result = 'kilometre(s)'
+        break;
+    }
+    
     return result;
   };
   
@@ -102,6 +133,8 @@ function ConvertHandler() {
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     let result;
+    
+    result = initNum + ' ' + this.spellOutUnit(initUnit) + ' converts to ' + returnNum+ ' ' + this.spellOutUnit(returnUnit)
     
     return result;
   };

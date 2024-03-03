@@ -42,7 +42,13 @@ suite('Functional Tests', function() {
   })
   
   test('Convert with no number such as kg', function(done) {
-    
+    chai.request(server)
+        .get('/api/convert')
+        .query({input: 'kg'})
+        .end(function(err, res) {
+          assert.equal(res.body.returnNum, 2.20462)
+    })
+    done();
   })
   
 });
