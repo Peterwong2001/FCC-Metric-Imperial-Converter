@@ -15,6 +15,11 @@ function ConvertHandler() {
     
     result = input.match(inputRegex)[1]
     
+    let validUnits = ['gal', 'GAL', 'l', 'L', 'mi', 'MI', 'km', 'KM', 'lbs', 'LBS', 'kg', 'KG']
+    if (!validUnits.includes(result)) {
+      return 'Invalid unit'
+    }
+    
     return result;
   };
   
@@ -31,6 +36,12 @@ function ConvertHandler() {
       result = 'kg'
     } else if (initUnit === 'kg' || initUnit === 'KG') {
       result = 'lbs'
+    }
+    
+    if (initUnit === 'mi' || initUnit === 'MI') {
+      result = 'km'
+    } else if (initUnit === 'km' || initUnit === 'KM') {
+      result = 'mi'
     }
     
     return result;
@@ -58,6 +69,12 @@ function ConvertHandler() {
       result = initNum * lbsToKg
     } else if (initUnit === 'kg' || initUnit === 'KG') {
       result = (initNum / lbsToKg).toFixed(5)
+    }
+    
+    if (initUnit === 'mi' || initUnit === 'MI') {
+      result = initNum * miToKm
+    } else if (initUnit === 'km' || initUnit === 'KM') {
+      result = (initNum / miToKm).toFixed(5)
     }
     
     return result;

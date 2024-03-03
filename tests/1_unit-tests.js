@@ -37,7 +37,10 @@ suite('Unit Tests', function(){
   })
   
   test('Return an error for an invalid input unit', function(done) {
-    
+    let input = 'g';
+    let expected = 'invalid unit';
+    assert.equal(convertHandler.getUnit(32 + input), expected)
+    done();
   })
   
   test('Return the correct return unit for each valid input unit', function(done) {
@@ -63,11 +66,17 @@ suite('Unit Tests', function(){
   })
   
   test('Correctly convert mi to km', function(done) {
-    
+    let input = [5, 'mi'];
+    let expected = 8.04672;
+    assert.approximately(convertHandler.convert(input[0], input[1]), expected, 0.1);
+    done();
   })
   
   test('Correctly convert km to mi', function(done) {
-    
+    let input = [5, 'km'];
+    let expected = 3.10686;
+    assert.approximately(convertHandler.convert(input[0], input[1]), expected, 0.1);
+    done();
   })
   
   test('Correctly convert lbs to kg', function(done) {
