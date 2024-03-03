@@ -63,15 +63,23 @@ suite('Unit Tests', function(){
     done();
   })
     
-  /*
   test('Return the correct return unit for each valid input unit', function(done) {
-    
+    let input = ['gal', 'l', 'mi', 'km', 'lbs', 'kg'];
+    let expect = ['l', 'gal', 'km', 'mi', 'kg', 'lbs'];
+    input.forEach(function(ele, i) {
+      assert.equal(convertHandler.getReturnUnit(ele), expect[i]);
+    })
+    done();
   })
   
   test('Return the correct spelled-out string unit for each valid input unit', function(done) {
-    
+    let input = ['gal', 'l', 'mi', 'km', 'lbs', 'kg'];
+    let expect = ['gallon(s)', 'litre(s)', 'mile(s)', 'kilometre(s)', 'pound(s)', 'kilogram(s)'];
+    input.forEach(function(ele, i) {
+      assert.equal(convertHandler.spellOutUnit(ele), expect[i]);
+    })
+    done();
   })
-  */
   
   test('Correctly convert gal to L', function(done) {
     let input = [5, 'gal'];
@@ -115,7 +123,6 @@ suite('Unit Tests', function(){
     done();
   })
   
-  ////////////////
   test('For each valid unit inputs', function(done) {
     let input = ['gal', 'GAL', 'l', 'L', 'mi', 'MI', 'km', 'KM', 'lbs', 'LBS', 'kg', 'KG']
     input.forEach(function(ele) {
