@@ -48,8 +48,8 @@ suite('Unit Tests', function(){
     let expect = ['gallon(s)', 'litre(s)', 'mile(s)', 'kilometre(s)', 'pound(s)', 'kilogram(s)'];
     input.forEach(function(ele, i) {
       assert.equal(convertHandler.spellOutUnit(ele), expect[i]);
+      done();
     })
-    done();
   })
   
   test('Return an error for an invalid input unit', function(done) {
