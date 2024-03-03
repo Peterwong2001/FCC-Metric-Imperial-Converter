@@ -13,15 +13,21 @@ suite('Unit Tests', function(){
   })
   
   test('Decimal number input', function(done) {
-    
+    let input = '32.65L';
+    assert.equal(convertHandler.getNum(input), 32.65);
+    done();
   })
   
   test('Fractional input', function(done) {
-    
+    let input = '12/8';
+    assert.equal(convertHandler.getNum(input), 1.5);
+    done();
   })
   
   test('Fractional input with a decimal', function(done) {
-    
+    let input = '27/5.4';
+    assert.equal(convertHandler.getNum(input), 5);
+    done();
   })
   
   test('Error on a double-fraction', function(done) {

@@ -7,6 +7,22 @@ function ConvertHandler() {
     
     result = input.match(inputRegex)[0]
     
+    let numberRegex = /\d/;
+    
+    if (numberRegex.test(result) === false) {
+      result = 1;
+    }
+    
+    if (result.toString().includes('/')) {
+      let values = result.toString().split('/')
+      if (values.length != 2) {
+        return 'invalid number'
+      }
+      values[0] = parseFloat(values[0])
+      values[1] = parseFloat(values[1])
+      result = parseFloat((values[0] / values[1]).toFixed(5))
+    }
+    
     if (isNaN(result)) {
         return 'invalid number'
         }
@@ -31,7 +47,7 @@ function ConvertHandler() {
     let result;
     
     if (initUnit === 'gal' || initUnit === 'GAL') {
-      result = 'l'
+      result = 'L'
     } else if (initUnit === 'l' || initUnit === 'L') {
       result = 'gal'
     }
