@@ -13,13 +13,17 @@ module.exports = function (app) {
         let initNum = convertHandler.getNum(input);
         let initUnit = convertHandler.getUnit(input);
         let returnNum = convertHandler.convert(initNum, initUnit);
-        let returnUnit = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
+        let returnUnit = convertHandler.getReturnUnit(initUnit);
+        let toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
     
         let responseObj = {}
         responseObj['initNum'] = initNum
         responseObj['initUnit'] = initUnit
         responseObj['returnNum'] = returnNum
-        responseObj['']
+        responseObj['returnUnit'] = returnUnit
+        responseObj['string'] = toString
+    
+    res.json(responseObj);
   })
   
 };
