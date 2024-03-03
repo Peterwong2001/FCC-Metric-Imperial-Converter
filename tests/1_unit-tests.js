@@ -25,6 +25,8 @@ suite('Unit Tests', function(){
   })
   
   test('Error on a double-fraction', function(done) {
+    let input = '3/7.2/4kg';
+    let expected = 'invalid number';
     
   })
   

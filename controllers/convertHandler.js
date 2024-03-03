@@ -7,6 +7,10 @@ function ConvertHandler() {
     
     result = input.match(inputRegex)[0]
     
+    if (isNaN(result)) {
+        return 'invalid number'
+        }
+    
     return result;
   };
   
@@ -17,7 +21,7 @@ function ConvertHandler() {
     
     let validUnits = ['gal', 'GAL', 'l', 'L', 'mi', 'MI', 'km', 'KM', 'lbs', 'LBS', 'kg', 'KG']
     if (!validUnits.includes(result)) {
-      return 'Invalid unit'
+      return 'invalid unit'
     }
     
     return result;
