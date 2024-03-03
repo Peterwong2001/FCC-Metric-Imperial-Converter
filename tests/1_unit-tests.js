@@ -12,6 +12,46 @@ suite('Unit Tests', function(){
     done();
   })
   
-  test('Decimal number input')
+  test('Decimal number input', function(done) {
+    
+  })
+  
+  test('Fractional input', function(done) {
+    
+  })
+  
+  test('Fractional input with a decimal', function(done) {
+    
+  })
+  
+  test('Error on a double-fraction', function(done) {
+    
+  })
+  
+  test('Default to a numerical input of 1 when no numerical input is provided', function(done) {
+    
+  })
+  
+  test('Valid input unit', function(done) {
+    
+  })
+  
+  test('Return an error for an invalid input unit', function(done) {
+    
+  })
+  
+  test('Return the correct return unit for each valid input unit', function(done) {
+    
+  })
+  
+  test('Return the correct spelled-out string unit for each valid input unit', function(done) {
+    
+  })
+  
+  test('For each valid unit inputs', function(done) {
+    var input = ['gal', 'GAL', 'l', 'L', 'mi', 'MI', 'km', 'KM', 'lbs', 'LBS', 'kg', 'KG']
+    
+  })
+  
   
 });
