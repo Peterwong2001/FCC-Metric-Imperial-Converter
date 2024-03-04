@@ -33,7 +33,7 @@ function ConvertHandler() {
   this.getUnit = function(input) {
     let result;
     
-    result = input.match(inputRegex)[1]
+    result = input.match(inputRegex)[1];
     
     
     if (!result) {
@@ -45,9 +45,10 @@ function ConvertHandler() {
       return 'invalid unit'
     }
     
+    result = result.toLowerCase();
+    
     if (result === 'l') {
       result = 'L';
-    }
     }
    
     
