@@ -44,6 +44,10 @@ function ConvertHandler() {
       return 'invalid unit'
     }
     
+    if (result === 'l') {
+      result = 'L';
+    }
+    
     return result;
   };
   
