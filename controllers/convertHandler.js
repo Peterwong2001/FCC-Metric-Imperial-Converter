@@ -7,7 +7,7 @@ function ConvertHandler() {
     
     let result;
     
-    result = input.match(inputRegex)[0];
+    result = input.match(inputRegex);
     
     if (numberRegex.test(result) === false) {
       result = 1;
