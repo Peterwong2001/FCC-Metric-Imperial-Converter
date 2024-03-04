@@ -35,6 +35,7 @@ function ConvertHandler() {
     
     result = input.match(inputRegex)[1]
     
+    
     if (!result) {
       result = input.match(inputRegex)[0]
     }
@@ -47,12 +48,15 @@ function ConvertHandler() {
     if (result === 'l') {
       result = 'L';
     }
+    }
+   
     
     return result;
   };
   
   this.getReturnUnit = function(initUnit) {
     let result;
+    
     
     if (initUnit === 'gal' || initUnit === 'GAL') {
       result = 'L'
@@ -71,6 +75,7 @@ function ConvertHandler() {
     } else if (initUnit === 'km' || initUnit === 'KM') {
       result = 'mi'
     }
+    
     
     return result;
   };
