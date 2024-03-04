@@ -24,7 +24,7 @@ function ConvertHandler() {
         result = parseFloat((values[0]/values[1]).toFixed(5))
     }
     
-    if (isNaN(result) ) {
+    if (isNaN(result)) {
       return 'invalid number'
     }
     
