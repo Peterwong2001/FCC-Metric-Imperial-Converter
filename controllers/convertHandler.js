@@ -16,8 +16,6 @@ function ConvertHandler() {
       result = 1;
     }
     
-    console.log(result);
-    
     if (validUnits.includes(result)) {
       return 'invalid number'
     }
