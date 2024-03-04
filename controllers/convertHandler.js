@@ -3,9 +3,7 @@ let inputRegex = /[a-z]+|[^a-z]+/gi
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    let result;
-    
-    result = input.match(inputRegex)[0];
+    let result = input.match(inputRegex)[0];
     
     let numberRegex = /\d/;
     
@@ -20,16 +18,12 @@ function ConvertHandler() {
       }
       values[0] = parseFloat(values[0])
       values[1] = parseFloat(values[1])
-      result = parseFloat((values[0] / values[1]).toFixed(5))
-      console.log('fractions = ', result);
+      result = parseFloat((values[0]/values[1]).toFixed(5))
     }
     
     if (isNaN(result) ) {
       return 'invalid number'
     }
-    
-   
-    
     
     return result;
   };
