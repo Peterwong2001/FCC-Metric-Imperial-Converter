@@ -13,10 +13,6 @@ function ConvertHandler() {
       result = 1;
     }
     
-    if (isNaN(result)) {
-        return 'invalid number'
-        }
-    
     if (result.toString().includes('/')) {
       let values = result.toString().split('/')
       if (values.length != 2) {
@@ -26,6 +22,11 @@ function ConvertHandler() {
       values[1] = parseFloat(values[1])
       result = parseFloat((values[0] / values[1]).toFixed(5))
     }
+    
+    if (isNaN(result) ) {
+      return 'invalid number'
+    }
+    
     
     return result;
   };
