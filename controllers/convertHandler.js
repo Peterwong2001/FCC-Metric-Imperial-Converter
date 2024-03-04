@@ -14,7 +14,7 @@ function ConvertHandler() {
       result = 1;
     }
     
-    if (Symbol.for(result.toString().includes('/')) === Symbol.for('true')) {
+    if (result.toString().includes('/')) {
       let values = result.toString().split('/')
       if (values.length != 2) {
         return 'invalid number'
