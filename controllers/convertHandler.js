@@ -7,20 +7,15 @@ function ConvertHandler() {
     let result;
     
     result = input.match(inputRegex)[0];
+    console.log(result);
+    
+    
     
     let numberRegex = /\d/;
-    
-    let validUnits = ['gal', 'GAL', 'l', 'L', 'mi', 'MI', 'km', 'KM', 'lbs', 'LBS', 'kg', 'KG'];
     
     if (numberRegex.test(result) === false) {
       result = 1;
     }
-    
-    if (validUnits.includes(result)) {
-      return 'invalid number'
-    }
-    
-    
     
     if (result.toString().includes('/')) {
       let values = result.toString().split('/')
