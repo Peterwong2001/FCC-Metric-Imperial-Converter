@@ -4,13 +4,25 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     
-    let result = input.match(inputRegex)[0];
+    let result;
+    
+    result = input.match(inputRegex)[0];
     
     let numberRegex = /\d/;
+    
+    let validUnits = ['gal', 'GAL', 'l', 'L', 'mi', 'MI', 'km', 'KM', 'lbs', 'LBS', 'kg', 'KG'];
     
     if (numberRegex.test(result) === false) {
       result = 1;
     }
+    
+    console.log(result);
+    
+    if (validUnits.includes(result)) {
+      return 'invalid number'
+    }
+    
+    
     
     if (result.toString().includes('/')) {
       let values = result.toString().split('/')
@@ -31,14 +43,17 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     
-    let result = input.match(inputRegex)[1];
+    let result;
+    
+    result = input.match(inputRegex)[1];
+    
     
     
     if (!result) {
       result = input.match(inputRegex)[0]
     }
     
-    let validUnits = ['gal', 'GAL', 'l', 'L', 'mi', 'MI', 'km', 'KM', 'lbs', 'LBS', 'kg', 'KG']
+    let validUnits = ['gal', 'GAL', 'l', 'L', 'mi', 'MI', 'km', 'KM', 'lbs', 'LBS', 'kg', 'KG'];
     if (!validUnits.includes(result)) {
       return 'invalid unit'
     }
