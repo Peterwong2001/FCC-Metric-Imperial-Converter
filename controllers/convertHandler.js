@@ -16,12 +16,10 @@ function ConvertHandler() {
     if (result.toString().includes('/')) {
       
       let values = result.toString().split('/')
-      if (values.length != 2) {
+      if (values.length > 2) {
     	  return 'invalid number'   
       } else {
-          values[0] = parseFloat(values[0])
-          values[1] = parseFloat(values[1])
-          result = parseFloat((values[0]/values[1]).toFixed(5))
+          result = parseFloat(parseFloat(values[0])/parseFloat(values[1]).toFixed(5))
       }  
     }
     
@@ -70,16 +68,16 @@ function ConvertHandler() {
       result = 'gal'
     }
     
-    if (initUnit === 'lbs' || initUnit === 'LBS') {
-      result = 'kg'
-    } else if (initUnit === 'kg' || initUnit === 'KG') {
-      result = 'lbs'
-    }
-    
     if (initUnit === 'mi' || initUnit === 'MI') {
       result = 'km'
     } else if (initUnit === 'km' || initUnit === 'KM') {
       result = 'mi'
+    }
+    
+    if (initUnit === 'lbs' || initUnit === 'LBS') {
+      result = 'kg'
+    } else if (initUnit === 'kg' || initUnit === 'KG') {
+      result = 'lbs'
     }
     
     
@@ -98,6 +96,14 @@ function ConvertHandler() {
       case 'L':
         result = 'litres';
         break;
+      case 'mi':
+      case 'MI':
+        result = 'miles';
+        break;
+      case 'km':
+      case 'KM':
+        result = 'kilometers'
+        break;
       case 'lbs':
       case 'LBS':
         result = 'pounds';
@@ -105,14 +111,6 @@ function ConvertHandler() {
       case 'kg':
       case 'KG':
         result = 'kilograms';
-        break;
-      case 'mi':
-      case 'MI':
-        result = 'miles';
-        break;
-      case 'km':
-      case 'KM':
-        result = 'kilometres'
         break;
     }
     
@@ -131,16 +129,16 @@ function ConvertHandler() {
       result = (initNum / galToL).toFixed(5)
     }
     
-    if (initUnit === 'lbs' || initUnit === 'LBS') {
-      result = (initNum * lbsToKg).toFixed(5)
-    } else if (initUnit === 'kg' || initUnit === 'KG') {
-      result = (initNum / lbsToKg).toFixed(5)
-    }
-    
     if (initUnit === 'mi' || initUnit === 'MI') {
       result = (initNum * miToKm).toFixed(5)
     } else if (initUnit === 'km' || initUnit === 'KM') {
       result = (initNum / miToKm).toFixed(5)
+    }
+    
+    if (initUnit === 'lbs' || initUnit === 'LBS') {
+      result = (initNum * lbsToKg).toFixed(5)
+    } else if (initUnit === 'kg' || initUnit === 'KG') {
+      result = (initNum / lbsToKg).toFixed(5)
     }
     
     return parseFloat(result);
