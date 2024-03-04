@@ -22,8 +22,8 @@ function ConvertHandler() {
           values[0] = parseFloat(values[0])
           values[1] = parseFloat(values[1])
           result = parseFloat((values[0]/values[1]).toFixed(5))
-  }  
- }
+      }  
+    }
     
     if (isNaN(result)) {
       return 'invalid number'
