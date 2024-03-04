@@ -3,6 +3,7 @@ let inputRegex = /[a-z]+|[^a-z]+/gi
 function ConvertHandler() {
   
   this.getNum = function(input) {
+    
     let result = input.match(inputRegex)[0];
     
     let numberRegex = /\d/;
@@ -29,9 +30,8 @@ function ConvertHandler() {
   };
   
   this.getUnit = function(input) {
-    let result;
     
-    result = input.match(inputRegex)[1];
+    let result = input.match(inputRegex)[1];
     
     
     if (!result) {
