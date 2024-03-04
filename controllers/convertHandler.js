@@ -7,9 +7,6 @@ function ConvertHandler() {
     let result;
     
     result = input.match(inputRegex)[0];
-    console.log(result);
-    
-    
     
     let numberRegex = /\d/;
     
