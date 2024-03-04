@@ -17,7 +17,7 @@ function ConvertHandler() {
       
       let values = result.toString().split('/')
       if (values.length != 2) {
-    	return 'invalid number'   
+    	  return 'invalid number'   
       } else {
           values[0] = parseFloat(values[0])
           values[1] = parseFloat(values[1])
@@ -30,6 +30,7 @@ function ConvertHandler() {
     }
     
     return result;
+    
   };
   
   this.getUnit = function(input) {
