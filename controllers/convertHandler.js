@@ -1,4 +1,5 @@
 let inputRegex = /[a-z]+|[^a-z]+/gi;
+let numberRegex = /\d/;
 
 function ConvertHandler() {
   
@@ -8,20 +9,19 @@ function ConvertHandler() {
     
     result = input.match(inputRegex)[0];
     
-    let numberRegex = /\d/;
-    
     if (numberRegex.test(result) === false) {
       result = 1;
     }
     
     if (result.toString().includes('/')) {
-    let values = result.toString().split('/')
-    if (values.length != 2) {
+      
+      let values = result.toString().split('/')
+      if (values.length != 2) {
     	return 'invalid number'   
-  } else {
-      values[0] = parseFloat(values[0])
-      values[1] = parseFloat(values[1])
-      result = parseFloat((values[0]/values[1]).toFixed(5))
+      } else {
+          values[0] = parseFloat(values[0])
+          values[1] = parseFloat(values[1])
+          result = parseFloat((values[0]/values[1]).toFixed(5))
   }  
  }
     
