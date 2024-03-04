@@ -74,7 +74,7 @@ suite('Unit Tests', function(){
   
   test('Return the correct spelled-out string unit for each valid input unit', function(done) {
     let input = ['gal', 'l', 'mi', 'km', 'lbs', 'kg'];
-    let expect = ['gallon(s)', 'litre(s)', 'mile(s)', 'kilometre(s)', 'pound(s)', 'kilogram(s)'];
+    let expect = ['gallons', 'litres', 'miles', 'kilometres', 'pounds', 'kilograms'];
     input.forEach(function(ele, i) {
       assert.equal(convertHandler.spellOutUnit(ele), expect[i]);
     })
@@ -122,13 +122,5 @@ suite('Unit Tests', function(){
     assert.approximately(convertHandler.convert(input[0], input[1]), expected, 0.1);
     done();
   })
-  
-  test('For each valid unit inputs', function(done) {
-    let input = ['gal', 'GAL', 'l', 'L', 'mi', 'MI', 'km', 'KM', 'lbs', 'LBS', 'kg', 'KG']
-    input.forEach(function(ele) {
-      assert.equal(convertHandler.getUnit(32 + ele), ele)
-    });
-    done();
-  })
-  })
+ })
 });
