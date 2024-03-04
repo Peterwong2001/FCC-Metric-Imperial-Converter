@@ -5,7 +5,7 @@ function ConvertHandler() {
   this.getNum = function(input) {
     let result;
     
-    result = input.match(inputRegex)[0]
+    result = input.match(inputRegex)[0];
     
     let numberRegex = /\d/;
     
@@ -27,6 +27,7 @@ function ConvertHandler() {
         return 'invalid number'
         }
     
+    console.log('result = ', result);
     return result;
   };
   
